@@ -9,7 +9,9 @@ const Layout = ({ children }: LayoutProps) => {
 	return (
 		<div className=" bg-slate-100">
 			<Navbar />
-			<div className="">{children}</div>
+			<main className="flex flex-col items-center min-h-screen justify-center py-40">
+				{children}
+			</main>
 		</div>
 	);
 };

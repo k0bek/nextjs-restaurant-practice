@@ -1,5 +1,5 @@
 import FoodItems from "@/components/FoodItems/FoodItems";
-import fetchAllMeals from "@/utils/fetchAllMeals";
+import fetchAllMeals from "@/helpers/fetchAllMeals";
 
 export interface meals {
 	title: string;
