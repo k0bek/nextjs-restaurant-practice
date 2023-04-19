@@ -14,7 +14,7 @@ const SingleMeal = ({ meal }: { meal: mealInterface }) => {
 
 	return (
 		<div className="flex flex-col">
-			<Image src={meal.image} width={600} height={600} alt={meal.title} />
+			<Image src={meal?.image} width={600} height={600} alt={meal?.title} />
 			<div className=" text-center">
 				<h1 className=" text-4xl">{meal.title}</h1>
 				<p>{meal.description}</p>
