@@ -1,7 +1,7 @@
 import FoodItems from "@/components/FoodItems/FoodItems";
 import fetchAllMeals from "@/helpers/fetchAllMeals";
 
-export interface meals {
+export interface mealInterface {
 	title: string;
 	id: string;
 	description: string;
@@ -10,7 +10,7 @@ export interface meals {
 	price: string;
 }
 
-export default function Home({ meals }: { meals: meals[] }) {
+export default function Home({ meals }: { meals: mealInterface[] }) {
 	return <FoodItems meals={meals} />;
 }
 

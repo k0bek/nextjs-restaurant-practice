@@ -9,6 +9,7 @@ interface MealItemProps {
 	price: string;
 	image: string;
 	mostPopular: boolean;
+	id: string;
 }
 
 const FoodItem = ({
@@ -17,12 +18,15 @@ const FoodItem = ({
 	price,
 	image,
 	mostPopular,
+	id,
 }: MealItemProps) => {
 	const router = useRouter();
 
+	console.log(id);
+
 	const goToTheDetailPage = useCallback(() => {
-		router.push(`/menu/${title.toLowerCase().replace(/\s+/g, "-")}`);
-	}, [router, title]);
+		router.push(`/menu/${id}`);
+	}, [router, id]);
 
 	return (
 		<li className="flex justify-center flex-col items-center gap-2 bg-gray-300 p-5 rounded-lg max-w-lg text-center">
@@ -31,7 +35,7 @@ const FoodItem = ({
 			<p className="text-2xl">{price}$</p>
 			<Image alt={title} src={image} width={250} height={250} />
 			{mostPopular && <p>The most popular meal!</p>}
-			<Button onClick={goToTheDetailPage} />
+			<Button onClick={goToTheDetailPage}>See more</Button>
 		</li>
 	);
 };

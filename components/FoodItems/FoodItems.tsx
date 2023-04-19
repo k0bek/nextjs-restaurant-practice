@@ -1,25 +1,31 @@
 import React, { useState } from "react";
 import FoodItem from "./FoodItem";
-import { meals } from "@/pages";
+import { mealInterface } from "@/pages";
+import { useRouter } from "next/router";
 
-const FoodItems = ({ meals }: { meals: meals[] }) => {
-	console.log(meals);
+const FoodItems = ({ meals }: { meals: mealInterface[] }) => {
+	const router = useRouter();
 	return (
 		<>
 			<h1 className=" text-4xl font-bold">
-				The most popular meals in our menu!
+				{router.pathname === "/menu" ? (
+					<h1>Our menu</h1>
+				) : (
+					<h1>The most popular meals in our menu!</h1>
+				)}
 			</h1>
 			<ul className="flex flex-col justify-center items-center py-10 gap-10">
 				<div className="flex flex-wrap gap-6 justify-center">
 					{meals.map((meal) => {
 						return (
 							<FoodItem
-								key={meal.title}
+								key={meal.id}
 								title={meal.title}
 								description={meal.description}
 								price={meal.price}
 								image={meal.image}
 								mostPopular={meal.mostPopular}
+								id={meal.id}
 							/>
 						);
 					})}

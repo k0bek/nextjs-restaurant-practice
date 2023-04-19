@@ -1,5 +1,3 @@
-import React from "react";
-
 const fetchAllMeals = async () => {
 	const response = await fetch(
 		"https://restaurant-d31a3-default-rtdb.europe-west1.firebasedatabase.app/meals.json"

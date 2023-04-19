@@ -1,8 +1,8 @@
 import FoodItems from "@/components/FoodItems/FoodItems";
 import fetchAllMeals from "@/helpers/fetchAllMeals";
-import { meals } from "..";
+import { mealInterface } from "..";
 
-const Menu = ({ meals }: { meals: meals[] }) => {
+const Menu = ({ meals }: { meals: mealInterface[] }) => {
 	return <FoodItems meals={meals} />;
 };
 
