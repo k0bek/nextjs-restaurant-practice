@@ -22,14 +22,12 @@ const FoodItem = ({
 }: MealItemProps) => {
 	const router = useRouter();
 
-	console.log(id);
-
 	const goToTheDetailPage = useCallback(() => {
 		router.push(`/menu/${id}`);
 	}, [router, id]);
 
 	return (
-		<li className="flex justify-center flex-col items-center gap-2 bg-gray-300 p-5 rounded-lg max-w-lg text-center">
+		<li className="flex justify-center flex-col items-center gap-2 bg-gray-300 p-5 rounded-lg max-w-lg text-center ">
 			<p className=" text-3xl font-bold">{title}</p>
 			<p className=" text-xl">{description}</p>
 			<p className="text-2xl">{price}$</p>
